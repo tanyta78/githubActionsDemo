@@ -17,10 +17,11 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
+      - name: Build website
+        run: npm run build
       - name: Publish JS filename
         id: publish
         run: find dist/assets/*.js -type f -execdir echo 'anyFileName={}' >> $GITHUB_OUTPUT ';'
-        # run: find dist/assets/*.js -type f -execdir echo '::set-output name=anyFileName::{}';' old syntax
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
