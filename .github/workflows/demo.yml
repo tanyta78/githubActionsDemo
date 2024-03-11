@@ -64,6 +64,6 @@ jobs:
       - name: Output info
         run: |
           echo "$DB_NAME or ${{env.DB_NAME}}"
-          echo "$DB_PASSWORD"
+          echo "${{secrets.DB_PASSWORD}}"
       - name: Deploy
         run: echo "Deploying..."
