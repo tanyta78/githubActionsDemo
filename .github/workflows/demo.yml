@@ -62,6 +62,8 @@ jobs:
       - name: Output filename
         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Output info
-        run: echo "$DB_NAME or ${{env.DB_NAME}}"
+        run: |
+          echo "$DB_NAME or ${{env.DB_NAME}}"
+          echo "$DB_PASSWORD"
       - name: Deploy
         run: echo "Deploying..."
