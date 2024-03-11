@@ -8,3 +8,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 Run npm i locally to prevent workflow failure because of missing package-lock.json.
+Build project locally to prevent workflow failure because of missing directory/file. No such file or directory
