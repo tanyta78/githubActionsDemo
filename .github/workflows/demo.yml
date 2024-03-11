@@ -74,3 +74,11 @@ jobs:
           echo "${{secrets.DB_PASSWORD}}"
       - name: Deploy
         run: echo "Deploying..."
+  report:
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: |
+          echo "Something went wrong"
+          echo "${{ github}}"
