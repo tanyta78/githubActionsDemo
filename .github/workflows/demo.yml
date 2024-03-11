@@ -10,7 +10,7 @@ jobs:
       script-file: ${{ steps.publish.outputs.anyFileName}}
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
       - name: Lint code
@@ -22,7 +22,7 @@ jobs:
         run: find dist/assets/*.js -type f -execdir echo 'anyFileName={}' >> $GITHUB_OUTPUT ';'
         # run: find dist/assets/*.js -type f -execdir echo '::set-output name=anyFileName::{}';' old syntax
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist-files
           path: |
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
       - name: Build website
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dist-files
       - name: Output content
