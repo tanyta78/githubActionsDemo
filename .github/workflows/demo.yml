@@ -77,6 +77,11 @@ jobs:
           echo "${{secrets.DB_PASSWORD}}"
       - name: Deploy
         run: echo "Deploying..."
+  information:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run custom action
+        uses: ./.github/actions/deploy-s3-javascript
   report:
     needs: [test, deploy]
     if: failure()
